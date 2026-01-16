@@ -6,11 +6,11 @@
 #    By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/18 11:36:06 by gpollast          #+#    #+#              #
-#    Updated: 2026/01/16 15:30:57 by gpollast         ###   ########.fr        #
+#    Updated: 2026/01/16 15:30:53 by gpollast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixed2
+NAME = fixed3
 
 SRCS =	src/main.cpp \
 		src/Fixed.cpp

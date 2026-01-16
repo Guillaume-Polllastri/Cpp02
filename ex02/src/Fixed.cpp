@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:55:01 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/16 16:37:34 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/16 17:42:18 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,84 @@ Fixed::~Fixed() {
 
 // Assignment operator overload
 
+// Comparison operators
+
 Fixed&  Fixed::operator=(const Fixed& copy) {
     std::cout << "Copy assignment operator called\n";
     if (this != &copy)
         this->_fixed = copy.getRawBits();
     return *this;
+}
+
+bool    Fixed::operator<(const Fixed& fixed) {
+    if (this->_fixed < fixed._fixed)
+        return (true);
+    return (false);
+}
+
+bool	Fixed::operator>(const Fixed& fixed) {
+    if (this->_fixed > fixed._fixed)
+        return (true);
+    return (false);
+}
+
+bool	Fixed::operator>=(const Fixed& fixed) {
+    if (this->_fixed >= fixed._fixed)
+        return (true);
+    return (false);
+}
+
+bool	Fixed::operator<=(const Fixed& fixed) {
+    if (this->_fixed <= fixed._fixed)
+        return (true);
+    return (false);
+}
+
+bool	Fixed::operator==(const Fixed& fixed) {
+    if (this->_fixed == fixed._fixed)
+        return (true);
+    return (false);
+}
+
+bool	Fixed::operator!=(const Fixed& fixed) {
+    if (this->_fixed != fixed._fixed)
+        return (true);
+    return (false);
+}
+
+// Arithmetic operators
+
+float	Fixed::operator+(const Fixed& fixed) {
+    return (this->toFloat() + fixed.toFloat());
+}
+
+float	Fixed::operator-(const Fixed& fixed) {
+    return (this->toFloat() - fixed.toFloat());
+}
+
+float	Fixed::operator*(const Fixed& fixed) {
+    return (this->toFloat() * fixed.toFloat());
+}
+
+float	Fixed::operator/(const Fixed& fixed) {
+    if (this->_fixed == 0 || fixed._fixed == 0)
+    {
+        std::cerr << C_RED << "Error Divide by ";
+        return (0);
+    }
+    return (this->toFloat() / fixed.toFloat());
+}
+
+// Increment/Decrement operators
+
+void   Fixed::operator++( void )
+{
+    this->_fixed += this->_fractionnal;
+}
+
+void   Fixed::operator--( void )
+{
+    this->_fixed -= this->_fractionnal;
 }
 
 std::ostream&	operator<<( std::ostream & output, Fixed const & fixed)
@@ -71,5 +144,5 @@ float	Fixed::toFloat( void ) const {
 }
 
 int		Fixed::toInt( void ) const {
-    return (roundf(this->_fixed >> this->_fractionnal));    
+    return (roundf(this->_fixed >> this->_fractionnal)); 
 }
