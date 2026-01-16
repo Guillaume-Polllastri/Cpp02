@@ -6,11 +6,13 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 11:37:32 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/14 12:40:15 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/16 13:58:58 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
+#include <iostream>
 
 class Fixed {
 private:
@@ -32,3 +34,5 @@ public:
 	float	toFloat( void ) const;
 	int		toInt( void ) const;
 };
+
+std::ostream&	operator<<( std::ostream & output, Fixed const & fixed);
