@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:59:07 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/16 17:46:32 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/18 21:16:38 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ int main( void ) {
     
     a = Fixed( 2 );
     
-    std::cout << C_CYAN << "\nThe original value:" << C_RESET << "\n";
-    std::cout << "a = " << a << "\n\n";
+    std::cout << C_CYAN << "\nValues:" << C_RESET << "\n";
+    std::cout << "a = " << a << "\n";
+    std::cout << "c = " << c << "\n\n";
     
     std::cout << C_CYAN << "The 6 comparison operators:" << C_RESET << "\n";
     std::cout << "a < c = " << (a < c) << '\n';
@@ -39,6 +40,24 @@ int main( void ) {
     std::cout << "a / c = " << (a / c) << "\n\n";
 
     std::cout << C_CYAN << "The 4 increment/decrement operators:" << C_RESET << "\n";
-    std::cout << "a++ = " << '\n';
+    std::cout << "a = " << a << "\n";
+    std::cout << "(before) a++ = " << a++ << '\n';
+    std::cout << "(after) a++ = " << a << "\n\n";
+	
+	a = Fixed(2);
+    std::cout << "a = " << a << "\n";
+    std::cout << "(before) ++a = " << ++a << '\n';
+    std::cout << "(after) ++a = " << a << "\n\n";
+
+	a = Fixed(2);
+    std::cout << "a = " << a << "\n";
+    std::cout << "(before) a-- = " << a-- << '\n';
+    std::cout << "(after) a-- = " << a << "\n\n";
+	
+	a = Fixed(2);
+    std::cout << "a = " << a << "\n";
+    std::cout << "(before) --a = " << --a << '\n';
+    std::cout << "(after) --a = " << a << "\n\n";
+	a = Fixed(2);
     return 0;
 }

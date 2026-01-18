@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:55:01 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/16 17:42:18 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/18 21:14:38 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,28 @@
 // Constructor
 
 Fixed::Fixed(): _fixed(0) {
-    std::cout << "Default constructor called\n";
+    // std::cout << "Default constructor called\n";
 }
 
 Fixed::Fixed(const Fixed& copy) {
-    std::cout << "Copy constructor called\n";
+    // std::cout << "Copy constructor called\n";
     *this = copy;
 }
 
 Fixed::Fixed(const int num) {
-    std::cout << "Int constructor called\n";
+    // std::cout << "Int constructor called\n";
     this->_fixed = roundf(num << this->_fractionnal);
 }
 
 Fixed::Fixed(const float fnumber) {
-    std::cout << "Float constructor called\n";
+    // std::cout << "Float constructor called\n";
     this->_fixed = roundf(fnumber * (1 << this->_fractionnal));
 }
 
 // Destructor
 
 Fixed::~Fixed() {
-    std::cout << "Destructor called\n";
+    // std::cout << "Destructor called\n";
 }
 
 // Assignment operator overload
@@ -46,7 +46,7 @@ Fixed::~Fixed() {
 // Comparison operators
 
 Fixed&  Fixed::operator=(const Fixed& copy) {
-    std::cout << "Copy assignment operator called\n";
+    // std::cout << "Copy assignment operator called\n";
     if (this != &copy)
         this->_fixed = copy.getRawBits();
     return *this;
@@ -113,14 +113,30 @@ float	Fixed::operator/(const Fixed& fixed) {
 
 // Increment/Decrement operators
 
-void   Fixed::operator++( void )
+Fixed&	Fixed::operator++( void )
 {
-    this->_fixed += this->_fractionnal;
+    this->_fixed++;
+	return (*this);
 }
 
-void   Fixed::operator--( void )
+Fixed	Fixed::operator++( int )
 {
-    this->_fixed -= this->_fractionnal;
+	Fixed	tmp(*this);
+    this->_fixed++;
+	return (tmp);
+}
+
+Fixed&	Fixed::operator--( void )
+{
+    this->_fixed--;
+	return (*this);
+}
+
+Fixed	Fixed::operator--( int )
+{
+	Fixed	tmp(*this);
+    this->_fixed--;
+	return (tmp);
 }
 
 std::ostream&	operator<<( std::ostream & output, Fixed const & fixed)

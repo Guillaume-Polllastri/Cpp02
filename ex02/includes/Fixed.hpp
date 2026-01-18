@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 11:37:32 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/16 17:36:14 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/18 21:09:08 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ public:
 	float	operator*(const Fixed& copy);
 	float	operator/(const Fixed& copy);
 	
-	void	operator++( void);
-	void	operator--( void );
+	Fixed&	operator++( void );
+	Fixed	operator++( int );
+	Fixed&	operator--( void );
+	Fixed	operator--( int );
 	
 	~Fixed();
 	
