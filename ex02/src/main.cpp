@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:59:07 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/18 21:16:38 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/18 23:07:43 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ int main( void ) {
     std::cout << "a = " << a << "\n";
     std::cout << "(before) --a = " << --a << '\n';
     std::cout << "(after) --a = " << a << "\n\n";
-	a = Fixed(2);
+    std::cout << C_CYAN << "Min & Max functions:" << C_RESET << "\n";
+    std::cout << "a = " << a << "\n";
+    std::cout << "c = " << c << "\n";
+    std::cout << "min(a, c) = " << Fixed::min(a, c) << "\n";
+    std::cout << "max(a, c) = " << Fixed::max(a, c) << "\n\n";
+
     return 0;
 }

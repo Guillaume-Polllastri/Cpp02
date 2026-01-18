@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:55:01 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/18 21:14:38 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/18 23:05:10 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,4 +161,28 @@ float	Fixed::toFloat( void ) const {
 
 int		Fixed::toInt( void ) const {
     return (roundf(this->_fixed >> this->_fractionnal)); 
+}
+
+Fixed&	Fixed::min(Fixed& a, Fixed& b) {
+	if (a.getRawBits() <= b.getRawBits())
+		return (a);
+	return (b);
+}
+
+const Fixed&	Fixed::min(const Fixed& a, const Fixed& b) {
+	if (a.getRawBits() <= b.getRawBits())
+		return (a);
+	return (b);
+}
+
+Fixed&	Fixed::max(Fixed& a, Fixed& b) {
+	if (a.getRawBits() > b.getRawBits())
+		return (a);
+	return (b);
+}
+
+const Fixed&	Fixed::max(const Fixed& a, const Fixed& b) {
+	if (a.getRawBits() > b.getRawBits())
+		return (a);
+	return (b);
 }
