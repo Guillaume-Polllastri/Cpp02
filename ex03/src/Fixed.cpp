@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:55:01 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/19 14:29:08 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/19 15:32:57 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,7 @@ float	Fixed::operator*(const Fixed& fixed) const {
 
 float	Fixed::operator/(const Fixed& fixed) const {
     if (this->_fixed == 0 || fixed._fixed == 0)
-    {
-        std::cerr << C_RED << "Error Divide by ";
         return (0);
-    }
     return (this->toFloat() / fixed.toFloat());
 }
 

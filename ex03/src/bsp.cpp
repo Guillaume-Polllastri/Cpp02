@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 23:58:16 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/19 15:02:41 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/19 15:32:09 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 	Fixed	sum1;
 	Fixed	sum2;
 	
+	if (area_1 == 0 || area_2 == 0 || area_3 == 0)
+		return (false);
 	sum1 = area_1 + area_2;
 	sum2 = sum1 + area_3;
 	return (sum2 == triangle_area);
