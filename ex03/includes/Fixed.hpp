@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 11:37:32 by gpollast          #+#    #+#             */
-/*   Updated: 2026/01/19 01:15:54 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/01/19 14:29:12 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ public:
 	bool	operator==(const Fixed& copy) const;
 	bool	operator!=(const Fixed& copy) const;
 	
-	float	operator+(const Fixed& copy);
-	float	operator-(const Fixed& copy);
-	float	operator*(const Fixed& copy);
-	float	operator/(const Fixed& copy);
+	float	operator+(const Fixed& copy) const;
+	float	operator-(const Fixed& copy) const;
+	float	operator*(const Fixed& copy) const;
+	float	operator/(const Fixed& copy) const;
 	
 	Fixed&	operator++( void );
 	Fixed	operator++( int );
